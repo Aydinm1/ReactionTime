@@ -25,7 +25,7 @@ Built as one of my earliest projects to practice **JavaScript, DOM manipulation,
 
 ---
 try it live:  
-👉 [GitHub Pages Demo](https://aydinm1.github.io/reactiontime/)
+👉 [GitHub Pages Demo](https://aydinm1.github.io/ReactionTime/)
 
 ---
 
