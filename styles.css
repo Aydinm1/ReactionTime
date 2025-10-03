@@ -15,7 +15,7 @@ p{
   height: 200px;
   background-color:red;
   display:none;
-  position:relative;
+  position:absolute;
 }
 body{
   font-family:sans-serif;
