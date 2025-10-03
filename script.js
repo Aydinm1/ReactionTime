@@ -8,24 +8,31 @@ function getRandomColor() {
   }
   return color;
 }
-function makeShapeAppear(){
-  var top = Math.random() * 400;
-  var left = Math.random() * 400;
+function makeShapeAppear() {
   var width = (Math.random() * 200) + 100;
-  if(Math.random() > 0.5){
-     document.getElementById("shape").style.borderRadius = "50%";
-     }else{
-       document.getElementById("shape").style.borderRadius = "0%";
-     }
-  document.getElementById("shape").style.backgroundColor = getRandomColor();
-  document.getElementById("shape").style.width = width + "px";
-  document.getElementById("shape").style.height = width + "px";
-  document.getElementById("shape").style.top = top + "px";
-  document.getElementById("shape").style.left = left + "px";
-  document.getElementById("shape").style.display = "block";
-start = new Date().getTime();
-  
+
+  // keep inside window
+  var maxTop = window.innerHeight - width;
+  var maxLeft = window.innerWidth - width;
+
+  var top = Math.random() * maxTop;
+  var left = Math.random() * maxLeft;
+
+  console.log("top:", top, "left:", left); // <--- check values
+
+  var shape = document.getElementById("shape");
+
+  shape.style.borderRadius = Math.random() > 0.5 ? "50%" : "0%";
+  shape.style.backgroundColor = getRandomColor();
+  shape.style.width = width + "px";
+  shape.style.height = width + "px";
+  shape.style.top = top + "px";
+  shape.style.left = left + "px";
+  shape.style.display = "block";
+
+  start = new Date().getTime();
 }
+
 function appearAfterDisplay(){
   setTimeout(makeShapeAppear, Math.random() * 2000);
 }
